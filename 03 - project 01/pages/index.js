@@ -1,19 +1,20 @@
-import { getFeaturedEvents } from "../dummy-data";
+import { getFeaturedEvents } from "../helpers/api-util";
 import EventList from "../components/events/EventList";
-import EventsSearch from "../components/events/events-search";
-import { useRouter } from "next/router";
 
-export default function HomePage() {
-  const featuredEvents = getFeaturedEvents();
-  const router = useRouter();
-  function findEventsHandler(year, month) {
-    const fullPath = `events/${year}/${month}`;
-    router.push(fullPath);
-  }
+export default function HomePage(props) {
   return (
     <>
-      <EventsSearch onSearch={findEventsHandler} />
-      <EventList items={featuredEvents} />
+      <EventList items={props.featuredEvetns} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const featuredEvents = await getFeaturedEvents();
+  return {
+    props: {
+      featuredEvetns: featuredEvents,
+    },
+    revalidate: 1800,
+  };
 }
