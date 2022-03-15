@@ -7,6 +7,7 @@ import EventList from "../../components/events/EventList";
 import ResultsTitle from "../../components/resultsTitle/results-title";
 import Button from "../../components/ui/Button";
 import ErrorAlert from "../../components/ui/error-alert";
+import Head from "next/head";
 
 export default function FilteredEventsPage(props) {
   const [loadedEvents, setLoadedEvents] = useState();
@@ -56,6 +57,10 @@ export default function FilteredEventsPage(props) {
   ) {
     return (
       <Fragment>
+        <Head>
+          <title>{`events not found`}</title>
+          <meta name="description" content={"event.description"} />
+        </Head>
         <ErrorAlert>
           <p>Invalid filter. Please adjust your values!</p>
         </ErrorAlert>
@@ -77,6 +82,10 @@ export default function FilteredEventsPage(props) {
   if (!filteredEvents || filteredEvents.length === 0) {
     return (
       <Fragment>
+        <Head>
+          <title>{`events not found`}</title>
+          <meta name="description" content={"event.description"} />
+        </Head>
         <ErrorAlert>
           <p>No events found for the chosen filter!</p>
         </ErrorAlert>
@@ -91,6 +100,10 @@ export default function FilteredEventsPage(props) {
 
   return (
     <Fragment>
+      <Head>
+        <title>{`events ${numMonth}/${numYear}`}</title>
+        <meta name="description" content={"event.description"} />
+      </Head>
       <ResultsTitle date={date} />
       <EventList items={filteredEvents} />
     </Fragment>
