@@ -3,7 +3,7 @@ import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
 import Head from "next/head";
-
+import Comments from "../../components/Input/comments";
 export default function EventDetailPage(props) {
   const event = props.seletedEvent;
 
@@ -29,6 +29,7 @@ export default function EventDetailPage(props) {
           imageAlt={event.title}
         />
         <EventContent>{event.description}</EventContent>
+        <Comments eventId={event.id} />
       </>
     </div>
   );
