@@ -23,11 +23,8 @@ async function handler(req, res) {
     };
 
     let client;
-    //NGc6L9Vjwq3IL7OK
     try {
-      client = await MongoClient.connect(
-        "mongodb+srv://mongo:NGc6L9Vjwq3IL7OK@cluster0.fyrgo.mongodb.net/meetups?retryWrites=true&w=majority"
-      );
+      client = await MongoClient.connect("mongourl");
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "Could not connect to database." });
