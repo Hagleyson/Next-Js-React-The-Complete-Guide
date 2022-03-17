@@ -10,7 +10,7 @@ export default function PostItem(props) {
     year: "numeric",
   });
   const imagePath = `/images/posts/${slug}/${image}`;
-  const linkPath = `/post/${slug}`;
+  const linkPath = `/posts/${slug}`;
 
   return (
     <li className={classes.post}>
