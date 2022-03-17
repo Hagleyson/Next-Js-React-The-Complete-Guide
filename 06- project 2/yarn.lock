@@ -2026,7 +2026,7 @@ react-is@^17.0.0:
 
 react-markdown@^8.0.1:
   version "8.0.1"
-  resolved "https://registry.npmjs.org/react-markdown/-/react-markdown-8.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-markdown/-/react-markdown-8.0.1.tgz#683b5225fccbdd7eca76aa89b621894a317dd4d6"
   integrity sha512-g78B0KtUk8oDRt59fX9SWhMikn3/qYcQW+aVMxdIulcjCNeecAZNOmR8uXy5p4bhbuPIS8gZly81bF4pAQWYXw==
   dependencies:
     "@types/hast" "^2.0.0"
